@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: example-app-1
-        image: example-app-1:0.0.2
+        image: sanjai1603/test-flux:v1
         ports:
         - containerPort: 5000
         volumeMounts:
