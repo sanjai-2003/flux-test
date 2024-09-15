@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: example-app-1
+  name: ecom-application
   labels:
-    app: example-app-1
+    app:  ecom-application
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: example-app-1
+      app:  ecom-application
   replicas: 2
   strategy:
     type: RollingUpdate
@@ -18,17 +18,17 @@ spec:
   template:
     metadata:
       labels:
-        app: example-app-1
+        app:  ecom-application
     spec:
       containers:
-      - name: example-app-1
-        image: sanjai1603/test-flux:v2
+      - name:  ecom-application
+        image: sanjai1603/test-flux:v3
         ports:
-        - containerPort: 5000
+        - containerPort: 5173
         volumeMounts:
         - name: config-volume
           mountPath: /configs/
       volumes:
       - name: config-volume
         configMap:
-          name: example-app-1
+          name:  ecom-application
